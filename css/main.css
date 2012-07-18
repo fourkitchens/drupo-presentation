@@ -962,4 +962,7 @@ body {
 
 
 
-
+.presenter {
+  float:left;
+  font-size: 12px;
+}
