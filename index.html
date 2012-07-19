@@ -35,7 +35,6 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <p class="presenter">mm</p>
           <h1>Drupal Poetry</h1>
           <h3 class="inverted">Responsive Application Development with Drupal and Backbone</h3>
           <script>
@@ -149,13 +148,14 @@
         </section>
 
         <section>
+          <p class='presenter'>mm</p>
           <h2>Responsive Web</h2>
           <section>
             <ul>
               <li>Send one piece of HTML for all devices.</li>
-              <li>Smart client "fits" content to the screen.</li>
-              <li>Don't hide content, rearrange.</li>
-              <li>Very well established patterns for content heavy sites.</li>
+              <li class="fragment">Smart client "fits" content to the screen.</li>
+              <li class="fragment">Don't hide content, rearrange.</li>
+              <li class="fragment">Very well established patterns for content heavy sites.</li>
             </ul>
           </section>
           <section>
@@ -171,71 +171,75 @@
         </section>
 
         <section>
+          <p class='presenter'>ef</p>
           <h2>Responsive Applications</h2>
           <section>
             <ul>
               <li>It's new ground, lots more unsolved problems that keep changing.</li>
-              <li>Design patterns are not as strongly established for cross device interaction.</li>
-              <li>HTML5 is a moving target, lots of promise but can't depend on browser support (test early and often).</li>
-              <li>Lack of solid libraries, get ready to write lots of code and solve lots of problems.</li>
-              <li>Inconsistent performance on older devices (Samsung Y U NO WORK!?).</li>
+              <li class="fragment">Design patterns are not as strongly established for cross device interaction.</li>
+              <li class="fragment">HTML5 is a moving target, lots of promise but can't depend on browser support (test early and often).</li>
+              <li class="fragment">Lack of solid libraries, get ready to write lots of code and solve lots of problems.</li>
+              <li class="fragment">Inconsistent performance on older devices (Samsung Y U NO WORK!?).</li>
             </ul>
           </section>
           <section>
-            Responsive application design requires different interfaces for different screen sizes.
+          <p>Responsive application design requires different interfaces for different screen sizes.</p>
             <ul>
-             <li>Content is simpler to scale than interaction.</li>
-             <li>Consider which interactions need to be exposed on mobile and add more on larger display sizes.</li>
-             <li>Still would recommend staying away from server side device detection.</li>
-             <li>Sometimes interaction needs to be degraded and that takes planning.</li>
+             <li class="fragment">Content is simpler to scale than interaction.</li>
+             <li class="fragment">Consider which interactions need to be exposed on mobile and add more on larger display sizes.</li>
+             <li class="fragment">Still would recommend staying away from server side device detection.</li>
+             <li class="fragment">Sometimes interaction needs to be degraded and that takes planning.</li>
             </ul>
           </section>
         </section>
 
         <section>
+          <p class='presenter'>mm</p>
           <h2>Design, code, and test mobile first.</h2>
-          <strong>Best piece of advice from this whole talk!</strong>
+          <p  class="fragment"><strong>Best piece of advice from this whole talk!</strong></p>
           <ul>
-            <li>Much easier to build up than to "fit" later.</li>
-            <li>It's true for everything from design to code to testing.</li>
-            <li>If you are going down this road it's time to stop being scared.</li>
+            <li class="fragment">Much easier to build up than to "fit" later.</li>
+            <li class="fragment">It's true for everything from design to code to testing.</li>
+            <li class="fragment">If you are going down this road it's time to stop being scared.</li>
           </ul>
         </section>
 
         <section>
+          <p class='presenter'>mm</p>
           <section>
             <h3>Responsive App Interface Layout is Complicated</h3>
             <ul>
-              <li>Where does the Nexus 7 fit?</li>
-              <li>Difference between tablet orientation is challenging</li>
-              <li>You forgot about the twitter browser didn't you.</li>
+              <li class="fragment">Where does the Nexus 7 fit?</li>
+              <li class="fragment">Difference between tablet orientation is challenging</li>
+              <li class="fragment">You forgot about the twitter browser didn't you.</li>
             </ul>
           </section>
           <section>
             <h3>Responsive App Interface Layout is Complicated</h3>
             <ul>
-              <li>Modularity is king.</li>
-              <li>Allow user to scale and scroll as much as you can.</li>
-              <li>Expect the unexpected!</li>
+              <li class="fragment">Modularity is king.</li>
+              <li class="fragment">Allow user to scale and scroll as much as you can.</li>
+              <li class="fragment">Expect the unexpected!</li>
             </ul>
           </section>
           <section>
             <h3>Client Side Templating To the Rescue</h3>
             <ul>
-              <li>It simplified everything and made the app fast (mostly).</li>
-              <li>Made different interfaces possible since the data was separated (but didn't make them easy or seamless).</li>
-              <li>Drawback: somewhat slow on shitty tablets.</li>
-              <li>If we did it again we'd send rendered HTML for the initial view and then use templating for updates.</li>
+              <li class="fragment">It simplified everything and made the app fast (mostly).</li>
+              <li class="fragment">Made different interfaces possible since the data was separated (but didn't make them easy or seamless).</li>
+              <li class="fragment">Drawback: somewhat slow on shitty tablets.</li>
+              <li class="fragment">If we did it again we'd send rendered HTML for the initial view and then use templating for updates.</li>
             </ul>
           </section>
         </section>
 
         <section>
+          <p class='presenter'>ef</p>
           <h3>CSS Display Dictates JavaScript Behavior</h3>
           <section>
             <ul>
-              <li>Don't need to worry about differences in browser JavaScript APIs.</li>
-              <li>It's fast!</li>
+              <li class="fragment">Don't need to worry about differences in browser JavaScript APIs.</li>
+              <li class="fragment">It's fast!</li>
             </ul>
           </section>
           <section>
@@ -253,6 +257,7 @@
         </section>
 
         <section>
+          <p class='presenter'>ef</p>
           <h3>Duck Punch, Learn to Love It</h3>
           <section>
             <ul>
@@ -292,6 +297,7 @@
         </section>
 
         <section>
+          <p class='presenter'>ef</p>
           <h3>Why not build on Drupal?</h3>
           <section>
             <ul>
@@ -319,6 +325,7 @@
         </section>
 
         <section>
+          <p class='presenter'>mm</p>
           <h3>Why build with Drupal?</h3>
           <ul>
             <li>Who likes building admin interfaces!? Yeah us neither...</li>
@@ -329,6 +336,7 @@
         </section>
 
         <section>
+          <p class='presenter'>ef</p>
           <h3>Why build with Node.js?</h3>
           <section>
             <ul>
@@ -352,10 +360,12 @@
         <section>
           <h3>Autosave Workflow</h3>
           <section>
+            <p class='presenter'>ef</p>
             <h4>Actual</h4>
             <img src="img/autosave-actual.png" />
           </section>
           <section>
+            <p class='presenter'>mm</p>
             <h4>Better</h4>
             <img src="img/autosave-ideal.png" />
           </section>
