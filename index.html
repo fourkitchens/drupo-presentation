@@ -32,6 +32,9 @@
       <!-- Used to fade in a background when a specific slide state is reached -->
       <div class="state-background"></div>
 
+      <!-- Fork me on GitHub ribbon -->
+      <a href="https://github.com/fourkitchens/Magnetic-Poetry" id="fork-me" class="image" target="_blank"><img src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
+
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
@@ -371,7 +374,7 @@
           </section>
         </section>
 
-        <section>
+        <section data-state="show-fork-me">
           <h1>Thanks!</h1>
         </section>
 
@@ -442,6 +445,11 @@
 
         // Transition style
         transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+      });
+
+      Reveal.addEventListener('show-fork-me', function() {
+        var forkMe = document.getElementById('fork-me');
+        forkMe.style.display = 'block';
       });
 
       hljs.initHighlightingOnLoad();
