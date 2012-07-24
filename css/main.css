@@ -962,4 +962,39 @@ body {
 
 
 
+.presenter {
+  float:left;
+  font-size: 12px;
+}
+
+#fork-me {
+  position: fixed;
+  top: 0;
+  border: 0;
+  display: none;
+}
+
+#fork-me img {
+	margin: 0;
+	background: none;
+	border: none;
+
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+.reveal a#fork-me:hover img {
+	background: none;
+  border-color: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
 
