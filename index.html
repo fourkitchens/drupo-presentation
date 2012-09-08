@@ -63,7 +63,6 @@
             <li class="github"><a href="https://github.com/mirzu">github.com/mirzu</a></li>
           </ul>
         </section>
-
         <section>
           <section>
             <p class='presenter'>mm</p>
@@ -90,7 +89,25 @@
             <img src="img/drupal-admin.png" />
           </section>
         </section>
-
+        <section>
+          <p class='presenter'>ef</p>
+          <h2>What We'll go over</h2>
+          <ul>
+            <li>Technologies we used &amp; how they work together.</li>
+            <li class="fragment">Differences between responsive websites &amp; responsive applications.</li>
+            <li class="fragment">Some fun JS tricks.</li>
+            <li class="fragment">Some things we got wrong, and what we're doing differently next time.</li>
+            <li class="fragment">How we integrated Drupal.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Why We Built it</h2>
+          <ul>
+            <li class="fragment">Have fun. (Built on 20% time)</li>
+            <li class="fragment">Work with hipster technolgies.</li>
+            <li class="fragment">See if Responsive works for Applications.</li>
+          </ul>
+        </section>  
         <section>
           <section>
             <p class='presenter'>ef</p>
@@ -158,61 +175,57 @@
 
         <section class="architecture">
           <section>
-          <p class='presenter'>ef</p>
-          <h2>Architecture</h2>
-          <img src="img/architecture.png" />
+            <p class='presenter'>ef+mm</p>
+            <h2>Architecture</h2>
+            <img src="img/architecture.png" />
+          </section>
+        </section>
+        <section>
+          <h2>Poem life cycle</h2>
+          <section>
+            <p class='presenter'>ef</p>
+            <h3>Fresh Page</h3>
+            <ul>
+              <li class="fragment">Nginx serves the HTML.</li>
+              <li class="fragment">Backbone.js requests the cached taxonomy terms to populate the word libraries.</li>
+              <li class="fragment">User starts to put words in the work area.</li>
+              <li class="fragment">All changes are stored in the browser memory.</li>
+              <li class="fragment">User clicks share.</li>
+            </ul>
           </section>
           <section>
             <p class='presenter'>mm</p>
-            <h2>Architecture </h2>
-              <h3>Front-end</h3>
-            <img style="float:left; width: 40%;" src="img/architecture-frontend.png" />
-            <ul style="float:right; width: 50%;">
-              <li>Backbone.js &amp; front-end</li>
-                <ul>
-                  <li>Renders HTML from JSON</li>
-                  <li>Runs the show</li>
-                </ul>
-              <li>NGINX</li>
-                <ul>
-                  <li>Serves static files</li>
-                  <li>HTML, CSS, JS, images</li>
-                  <li>Proxies Client connections to node.js</li>
-                </ul>
-              <li>Node.js</li>
-                <ul>
-                  <li>Sends and recieves JSON objects from Client.</li>
-                </ul>
+            <h3>Saving a Poem</h3>
+            <ul>
+              <li class="fragment">Poem is saved.</li>
+              <li class="fragment">If there is no Session: Session is lazy created by Node.js and stored in Browser Local storage.</li>
+              <li class="fragment">Poem is saved as a json object directly in MongoDB by Node.js.</li>
+              <li class="fragment">Permalink is created by Node.js from the MongoDB hash and sent to browser.</li>
+              <li class="fragment">Reference to Poem is asynchronously saved in Drupal using services. (Send some other data with it but we feel bad about that.)</li>
+              <li class="fragment">Drupal responds with NID.</li>
+              <li class="fragment">Node.js Updates the MongoDB document with the the NID.</li>
             </ul>
-          </section>
+          </section>  
           <section>
             <p class='presenter'>ef</p>
-            <h2>Architecture</h2>
-            <h3>Back-end</h3>
-            <img style="float:left; width: 40%;" src="img/architecture-backend.png" />
-            <ul style="float:right; width: 50%;">
-              <li>Node.js</li>
-                <ul>
-                  <li>Sends Poems to Drupal</li>
-                  <li>Grabs words from Drupal</li>
-                  <li>Handles Oath with Twitter</li>
-                </ul>
-              <li>Drupal</li>
-                <ul>
-                  <li>Used to adminster Poems and words.</li>
-                </ul>
-              <li>MongoDB</li>
-                <ul>
-                  <li>Stores Poems and users</li>
-                </ul>
-              <li>Twitter</li>
-                <ul>
-                  <li>Used for OAuth and Sharing tweets</li>
-                </ul>
-            </ul>
+            <h3>Fun stuff.</h3>
+            <ul>
+              <li class="fragment">User is encouraged to login with Twitter OAuth and/or tweet it.</li>
+              <li class="fragment">If they don't login and don't clear cache they can come back and edit.</li>
+              <li class="fragment"><em>Now it gets interesting.</em></li>
+              <li class="fragment">Moving the words saves the new poem in MongoDB. <em>Autosave!</em></li>
+              <li class="fragment">Same anon user can edit poems without login.</li>
+              <li class="fragment">Users can "fork" poems. Use someone else's poem as a starting point.</li>
+            </ul> 
+          </section>  
+        </section> 
+        <section class="architecture">
+          <section>
+            <p class='presenter'>questions</p>
+            <h2>Architecture Questions?</h2>
+            <img src="img/architecture.png" />
           </section>
         </section>
-
         <section>
           <h2>Responsive Application Development</h2>
           <h3>vs</h3>
@@ -226,7 +239,7 @@
             <ul>
               <li>Send one piece of HTML for all devices.</li>
               <li class="fragment">Smart client "fits" content to the screen.</li>
-              <li class="fragment">Don't hide content, rearrange.</li>
+              <li class="fragment">Media Queries a main tool.</li>
               <li class="fragment">Very well established patterns for content heavy sites.</li>
             </ul>
           </section>
@@ -239,6 +252,16 @@
                 <a href="http://bostonglobe.com/"><img src="img/boston-globe.png" /></a>
               </div>
             </div>
+          </section>
+          <section>
+            <h3>Media Query</h3>
+            <pre><code class="css">
+/* Tablets with a 600px width (in portrait mode) */
+@media only screen and (min-width: 600px) and (orientation:portrait) {
+  body {
+    font-size: 1.575em;
+  }
+            </code></pre> 
           </section>
         </section>
 
@@ -370,7 +393,8 @@
 
         <section>
           <p class='presenter'>ef</p>
-          <h3>Why not build on Drupal?</h3>
+          <h3>Why we didn't build </h3> 
+          <h3><em>all of it</em> on Drupal?</h3>
           <section>
             <ul>
               <li>Drupal is too slow for highly interactive apps.</li>
